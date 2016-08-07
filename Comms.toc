@@ -1,0 +1,15 @@
+## Interface: 70000
+## Title: Comms
+## Notes: Chat-channel communities.
+## Author: Tammya-MoonGuard
+## SavedVariables: CommsAddonSaved
+## OptionalDeps: 
+## Version: 1.0.0
+embeds.xml
+
+locale\index.xml
+comms.lua
+console.lua
+cipher.lua
+channels.lua
+protocol.lua

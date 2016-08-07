@@ -1,0 +1,50 @@
+PREFIX: COMMS
+
+
+-> CHANNEL:PMSG [CHANNEL][OWNER][ENCODED KEY][ENCODED MESSAGE]
+
+  Private message.
+  
+  
+-> CHANNEL:MSG [CHANNEL][OWNER][MSG]
+
+  Public message.
+  
+  
+-> CHANNEL:LOGIN [CHANNEL LIST WITH KEYS]
+  
+  User logs on or reloads their UI.
+  
+  Encoded keys are included for private channels. Users will verify that
+  their key matches before they show that the person has joined the channel.
+  
+
+<- WHISPER:HI [CHANNEL LIST]
+
+  User responding to a login or join message telling them which channels 
+  they are in.
+  
+  
+-> CHANNEL:LIST
+  
+  List public channels.
+  
+  
+<- WHISPER:LIST [CHANNEL LIST]
+  
+  Respond to public listing.
+  
+  Everyone responds to a list message, giving the caller the list of public 
+  channels that they're in. The caller aggregates the information to produce
+  a public channel list.
+  
+LEAVING CHANNELS IS SHOWN BY THE INGAME CHANNEL MESSAGE
+  
+
+CHANNEL INFO
+
+NAME		NAME OF CHANNEL
+MOTD		CHANNEL MOTD
+OWNER		NAME OF OWNER AND OWNER ALTS
+MODS		LIST OF CHANNEL MODERATORS
+KEY		KEY TO DECODE MESSAGES
